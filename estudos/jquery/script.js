@@ -30,7 +30,7 @@ $("#formProdutos").submit(function(e){
 
 });
 
-//Calcula total do carrindo
+//Calcula total do carrinho
 function calcularTotal(){
     var valorItem = $(".valor-item");
 
