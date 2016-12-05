@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>
+        </title>
+    </head>
+    <style>
+        @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+
+        .container {
+            margin-top: 10px;
+        }
+
+        #banner {
+            background-color: #ddd;
+            padding: 5px 0 5px 15px;
+        }
+    </style>
+    <body>
+
+        <div class="container">
+            <div class="row" id="banner">
+                <div class="col-lg-2">
+                    <h1>LOJA<small>.com.br</small></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Carrinho de compras</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Codigo</th>
+                                <th>Produto</th>
+                                <th>Unidade(s)</th>
+                                <th>Valor (R$)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Codigo</th>
+                                <th>Produto</th>
+                                <th>Unidade(s)</th>
+                                <th>Valor (R$)</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                        <tbody id="conteudo-carrinho">
+                            <tr>
+                                <td class="indexCarrinho">1</td>
+                                <td>88139</td>
+                                <td>Fonte Atx 600w real</td>
+                                <td>1</td>
+                                <td class="valor-item">249.95</td>
+                                <td><a href="#" class="btn btn-danger btnRemover">X remover</a></td>
+                            </tr>
+                            <tr>
+                                <td class="indexCarrinho">2</td>
+                                <td>12353</td>
+                                <td>Memória DDR3 4GB</td>
+                                <td>2</td>
+                                <td class="valor-item">299.95</td>
+                                <td><a href="#" class="btn btn-danger btnRemover">X remover</a></td>
+                            </tr>
+                            <tr>
+                                <td class="indexCarrinho">3</td>
+                                <td>12345</td>
+                                <td>Processador Core i5</td>
+                                <td>1</td>
+                                <td class="valor-item">749.95</td>
+                                <td><a href="#" class="btn btn-danger btnRemover">X remover</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4 style="color: red">Valor total: <span id="valor-total">0.00</span></h4>
+                    <p style="color: #333">Total de itens: <span id="total-itens"></span></p>
+                </div>
+            </div><!-- Fim Row Carrinho de compras-->
+
+            <div class="row">
+                <h3>Adicionar produtos</h3>
+                <form id="formProdutos" name="formProdutos" method="POST">
+                    <fieldset class="form-group">
+                        <label for="txtCodigo">Código *</label>
+                        <input type="text" class="form-control" name="txtCodigo" id="txtCodigo" required>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="txtProduto">Produto</label>
+                        <input type="text" class="form-control" name="txtProduto" id="txtProduto">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="txtQuantidade">Quantidade</label>
+                        <input type="text" class="form-control" name="txtQuantidade" id="txtQuantidade">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="txtValor">Valor *</label>
+                        <input type="text" class="form-control" name="txtValor" id="txtValor" required>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <button type="submit" class="btn btn-primary" name="cadastrarProduto">Adicionar</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- Código -->
+        <script src="script.js"></script>
+    </body>
+</html>
