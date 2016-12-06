@@ -30,9 +30,9 @@ $("#formProdutos").submit(function(e){
 
 });
 
-//Calcula total do carrinho
+//Calcula total do carrindo
 function calcularTotal(){
-    var valorItem = $(".valor-item");
+    var valorItem = $(".valor-item:visible");
 
     var total = 0;
 
@@ -50,9 +50,34 @@ function calcularTotal(){
 //Remove produto do carrinho
 $(".btnRemover").click(removeItem);
 
+//Desfaz remoção do carrinho
+$("#btnDesfazer").click(desfazItem);
+
+//Hover na tr - Aparecer conteudo
+$(".carrinho tbody tr").hover(addDestaque, removeDestaque);
+
+//Hover no botão remover - Add
+function addDestaque(){
+    $(this).find(".btnRemover").css({opacity: 1.0});
+}
+//Hover no botão remover - Remove
+function removeDestaque(){
+    $(this).find(".btnRemover").css({opacity: 0.2});
+}
+
+
+//Função para remover do carrinho
 function removeItem(e){
     e.preventDefault();
     var self = $(this);
-    self.closest("tr").remove();
+    self.closest("tr").hide();
+    calcularTotal();
+}
+
+//Função para adicionar ao carrinho novamente
+function desfazItem(e){
+    e.preventDefault();
+    var trsOcultos = $("tr:hidden");
+    trsOcultos.show();
     calcularTotal();
 }
