@@ -1,2 +1,2 @@
 # javascript-jquery
-Aulas de jaquer
+Aulas de Jquery
